@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2492014779316304838
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2492014779316304839}
-  m_LocalRotation: {x: -0, y: 0.9063079, z: -0, w: 0.42261827}
+  m_LocalRotation: {x: 0, y: 0.9063079, z: 0, w: 0.42261827}
   m_LocalPosition: {x: -138.90001, y: 1, z: 130.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4294967291
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -870,7 +870,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4294967291
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -1225,7 +1225,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -8061240218431744966, guid: c348712bda248c246b8c49b3db54643f,
+    m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_SelectActionValue:
     m_UseReference: 1

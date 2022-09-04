@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Main Camera Profile
+  m_Name: Post-processing Profile
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 8142753088666239852}
@@ -1393,7 +1393,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.78
+    value: 0.89
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1411,7 +1411,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 10
+    value: 7.17
   directLightingStrength:
     overrideState: 0
     value: 0
@@ -1439,10 +1439,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.21
+    value: 0.69
   threshold:
     overrideState: 1
-    value: 0.17
+    value: 0.24
   softKnee:
     overrideState: 0
     value: 0.5

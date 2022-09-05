@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.29009438, g: 0.36100632, b: 0.38679248, a: 1}
+  m_FogColor: {r: 0.40000004, g: 0.6392157, b: 0.6784314, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 11.5
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.515
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18031234, g: 0.22574896, b: 0.3069399, a: 1}
+  m_IndirectSpecularColor: {r: 0.09286085, g: 0.11626071, b: 0.15807405, a: 0.515}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4996,6 +4996,7 @@ Transform:
   m_Children:
   - {fileID: 345807182}
   - {fileID: 99371468}
+  - {fileID: 1219427622}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10936,6 +10937,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1217826703}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1219427621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1219427622}
+  - component: {fileID: 1219427623}
+  m_Layer: 31
+  m_Name: Post-Process Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1219427622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219427621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 598285871}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219427623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219427621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 5a858b228c7776047b18b36bd8998f90, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1001 &1220997240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19260,6 +19310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleController
       objectReference: {fileID: 0}
+    - target: {fileID: 4040892192186127586, guid: 25e5551179d66ce4db2ce80d490f3692,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7085015486573484168, guid: 25e5551179d66ce4db2ce80d490f3692,
         type: 3}
       propertyPath: m_RootOrder
@@ -20059,11 +20114,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Well
       objectReference: {fileID: 0}
-    - target: {fileID: 464816595448708400, guid: 5b9b1e3639da258409c4d313dc4c66aa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.06
-      objectReference: {fileID: 0}
     - target: {fileID: 464816595520057766, guid: 5b9b1e3639da258409c4d313dc4c66aa,
         type: 3}
       propertyPath: m_InteractionManager
@@ -20084,11 +20134,6 @@ PrefabInstance:
       propertyPath: m_TeleportationProvider
       value: 
       objectReference: {fileID: 66209552}
-    - target: {fileID: 464816595983145063, guid: 5b9b1e3639da258409c4d313dc4c66aa,
-        type: 3}
-      propertyPath: m_Radius
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9b1e3639da258409c4d313dc4c66aa, type: 3}
 --- !u!1001 &1811696625337289428
@@ -20157,6 +20202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Directional Light (Fill)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811696625436623647, guid: 54a9569856ba1f64397dbfc3dce67d55,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54a9569856ba1f64397dbfc3dce67d55, type: 3}
@@ -20230,34 +20280,18 @@ PrefabInstance:
     - target: {fileID: 2492014779316304839, guid: 49dbdb84d10e4a24faf827869eae4078,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2492014779657812556, guid: 49dbdb84d10e4a24faf827869eae4078,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 568025329}
-    - target: {fileID: 2492014779657812556, guid: 49dbdb84d10e4a24faf827869eae4078,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 4294967291
-      objectReference: {fileID: 0}
     - target: {fileID: 2492014780090970202, guid: 49dbdb84d10e4a24faf827869eae4078,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 568025329}
-    - target: {fileID: 2492014780090970202, guid: 49dbdb84d10e4a24faf827869eae4078,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 4294967291
-      objectReference: {fileID: 0}
-    - target: {fileID: 2492014781102283416, guid: 49dbdb84d10e4a24faf827869eae4078,
-        type: 3}
-      propertyPath: m_SelectAction.m_Reference
-      value: 
-      objectReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f,
-        type: 3}
     - target: {fileID: 2492014781102283417, guid: 49dbdb84d10e4a24faf827869eae4078,
         type: 3}
       propertyPath: m_InteractionManager
@@ -20277,50 +20311,15 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 568025329}
-    - target: {fileID: 289092439601888419, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 4294967292
-      objectReference: {fileID: 0}
     - target: {fileID: 4154952109461950435, guid: d886bd4293d56444e861a02f71bc9e62,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 568025329}
-    - target: {fileID: 4154952109461950435, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 4294967292
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643692, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_CameraYOffset
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643692, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
         type: 3}
@@ -20372,25 +20371,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643693, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6220463764920643694, guid: d886bd4293d56444e861a02f71bc9e62,
         type: 3}
       propertyPath: m_Name
       value: XR Origin (Giant)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463764920643694, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6220463765353679829, guid: d886bd4293d56444e861a02f71bc9e62,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d886bd4293d56444e861a02f71bc9e62, type: 3}
@@ -20411,11 +20395,6 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 568025329}
-    - target: {fileID: 6725101658012467415, guid: 9c155c12fc5321240911262fb8ad8ff3,
-        type: 3}
-      propertyPath: m_RetainTransformParent
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6725101658012467432, guid: 9c155c12fc5321240911262fb8ad8ff3,
         type: 3}
       propertyPath: m_RootOrder
@@ -20484,11 +20463,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Socket Interactor
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244912171763255780, guid: 064c91a833eaf9540a294878cc6a5bb0,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8244912171763255782, guid: 064c91a833eaf9540a294878cc6a5bb0,
         type: 3}
@@ -20568,6 +20542,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Directional Light (Key)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610473957375294021, guid: 069d38331d2d7fc4e94707c7257f47c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8610473957375294022, guid: 069d38331d2d7fc4e94707c7257f47c8,
         type: 3}

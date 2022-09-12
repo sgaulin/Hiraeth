@@ -9,6 +9,8 @@ Packages:
 
 -Post Processing
 
+-Shader Graph
+
 -TextMeshPro
 
 -XR Interaction Toolkit
@@ -19,10 +21,12 @@ Packages:
 ## Credits
 Synty:
 
--Adventure Pack
+-POLYGON Adventure Pack
 
--Particles Pack
+-POLYGON Dungeon Pack
 
--Prototype Pack
+-POLYGON Particles Pack
 
--Simple Sky Pack
+-POLYGON Prototype Pack
+
+-POLYGON Simple Sky Pack

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Cette classe sert a gerer les interactions avec le champignon
-public class Shroom : MonoBehaviour
+public class Selectionner : MonoBehaviour
 {
     // Declaration de variables public pour scaler up et down le joueur
     public float giantScale = 300;

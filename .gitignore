@@ -52,10 +52,8 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-# *.apk
+*.apk
 *.unitypackage
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-TP2/Assets/ExampleAssets/PolygonPrototype/URP_ExtractMe.unitypackage.meta

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cave : MonoBehaviour
+//Cette classe sert a gerer les changements de rendu et d'eclairage lorsqu'on entre ou sors d'une grotte.
+public class CaveSwitch : MonoBehaviour
 {
     private float defaultIntensity = 1;
 

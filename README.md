@@ -5,6 +5,8 @@ Packages:
 
 -Input System
 
+-FBX Exporter
+
 -Oculus XR Plugin
 
 -Post Processing
@@ -30,3 +32,7 @@ Synty:
 -POLYGON Prototype Pack
 
 -POLYGON Simple Sky Pack
+
+Jason Weimann: 
+
+-ReplaceWithPrefab tool script

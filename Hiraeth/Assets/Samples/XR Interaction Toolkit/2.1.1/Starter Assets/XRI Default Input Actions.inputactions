@@ -874,12 +874,12 @@
                 },
                 {
                     "name": "Teleport Mode Deactivate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "23265d48-6d6a-462c-8cb9-735551a6e1b8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1426,7 +1426,7 @@
                 {
                     "name": "",
                     "id": "5ede74d8-d30c-4c7c-b902-badc766b1572",
-                    "path": "<XRController>{LeftHand}/menu",
+                    "path": "<OculusTouchController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

@@ -9,6 +9,8 @@ public class PerspectivesSelection : MonoBehaviour
     public GameObject xrOrigin;
     public bool familiar = true;
     public bool inGame = false;
+    public bool isPaused = true;
+    public bool isStarted = false;
     [Header("Familiar")]
     public float familiarScale = 1;
     public GameObject familiarSpawnPoint;
@@ -66,56 +68,97 @@ public class PerspectivesSelection : MonoBehaviour
 
     public void PConnect()
     {
-        if (familiar && inGame == false )
+        if (familiar && isPaused)
         {
             xrOrigin.transform.position = familiarSpawnPoint.transform.position;
-            xrOrigin.transform.rotation = familiarSpawnPoint.transform.rotation;
+            //xrOrigin.transform.rotation = familiarSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(familiarScale, familiarScale, familiarScale);
 
             mainMenu.SetActive(false);
+            wristMenu.SetActive(false);
             inGame = true;
+            isStarted = true;
+            isPaused = false;
 
-            //familiarHead.SetActive(true);
+            leftHandRay.SetActive(false);
+            rightHandRay.SetActive(false);
             familiarLeftHand.SetActive(true);
             familiarRightHand.SetActive(true);
-        }
-        else if (familiar == false && inGame == false)
+
+            menuHeadModel.SetActive(false);
+            menuMouthMesh.SetActive(false);
+            menuLeftHandModel.SetActive(false);
+            menuRightHandModel.SetActive(false);
+            familiarHeadModel.SetActive(true);
+            familiarMouthMesh.SetActive(true);
+            familiarLeftHandModel.SetActive(true);
+            familiarRightHandModel.SetActive(true);
+}
+        else if (familiar == false && isPaused)
         {
+            if (isPaused && isStarted)
+            {
+                familiarSpawnPoint.transform.position = xrOrigin.transform.position;
+            }
+
             xrOrigin.transform.position = giantSpawnPoint.transform.position;
             xrOrigin.transform.rotation = giantSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
 
-            rightHandRay.GetComponent<XRInteractorLineVisual>().lineWidth *= giantScale;
             mainMenu.SetActive(false);
+            wristMenu.SetActive(false);
             inGame = true;
+            isStarted = true;
+            isPaused = false;
 
-            //giantHead.SetActive(true);
+            leftHandRay.SetActive(false);
+            rightHandRay.SetActive(false);
             giantLeftHand.SetActive(true);
             giantRightHand.SetActive(true);
+
+            menuHeadModel.SetActive(false);
+            menuMouthMesh.SetActive(false);
+            menuLeftHandModel.SetActive(false);
+            menuRightHandModel.SetActive(false);
+            giantHeadModel.SetActive(true);
+            giantMouthMesh.SetActive(true);
+            giantLeftHandModel.SetActive(true);
+            giantRightHandModel.SetActive(true);
         }
         
     }
 
-    public void PMenu()
+    public void PMainMenu()
     {
         if (inGame)
         {
             xrOrigin.transform.position = menuSpawnPoint.transform.position;
             xrOrigin.transform.rotation = menuSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(1, 1, 1);
-
-            rightHandRay.GetComponent <XRInteractorLineVisual>().lineWidth = defaultRay;
+            
             wristMenu.SetActive(false);
             mainMenu.SetActive(true);
             inGame = false;
 
-            //familiarHead.SetActive(false);
+            leftHandRay.SetActive(true);
+            rightHandRay.SetActive(true);
             familiarLeftHand.SetActive(false);
-            familiarRightHand.SetActive(false);
-
-            //giantHead.SetActive(false);
+            familiarRightHand.SetActive(false);           
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
+
+            menuHeadModel.SetActive(true);
+            menuMouthMesh.SetActive(true);
+            menuLeftHandModel.SetActive(true);
+            menuRightHandModel.SetActive(true);
+            familiarHeadModel.SetActive(false);
+            familiarMouthMesh.SetActive(false);
+            familiarLeftHandModel.SetActive(false);
+            familiarRightHandModel.SetActive(false);
+            giantHeadModel.SetActive(false);
+            giantMouthMesh.SetActive(false);
+            giantLeftHandModel.SetActive(false);
+            giantRightHandModel.SetActive(false);
         }
     }
 
@@ -124,10 +167,38 @@ public class PerspectivesSelection : MonoBehaviour
         if (wristMenu.activeSelf)
         {
             wristMenu.SetActive(false);
+            isPaused = false;
+
+            leftHandRay.SetActive(false);
+            rightHandRay.SetActive(false);
         }
-        else if (wristMenu.activeSelf == false)
+        else if (wristMenu.activeSelf == false && mainMenu.activeSelf == false)
         {
             wristMenu.SetActive(true);
+            isPaused = true;
+
+            leftHandRay.SetActive(true);
+            rightHandRay.SetActive(true);
+        }
+    }
+
+    public void menuActivate()
+    {
+        if (mainMenu.activeSelf)
+        {
+            mainMenu.SetActive(false);
+            isPaused = false;
+
+            leftHandRay.SetActive(false);
+            rightHandRay.SetActive(false);
+        }
+        else if (mainMenu.activeSelf == false)
+        {
+            mainMenu.SetActive(true);
+            isPaused = true;
+
+            leftHandRay.SetActive(true);
+            rightHandRay.SetActive(true);
         }
     }
     // Lorqu'il y a une collision, si le tag de l'object avec lequel on est entre en collision est nomme Head

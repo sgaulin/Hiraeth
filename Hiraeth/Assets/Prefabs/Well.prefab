@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023827355}
-  - component: {fileID: 1023827358}
   - component: {fileID: 1023827357}
+  - component: {fileID: 1023827358}
   - component: {fileID: 1023827356}
   m_Layer: 31
   m_Name: Post-Process Volume Cave
@@ -28,25 +28,12 @@ Transform:
   m_GameObject: {fileID: 1023827354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -5.51, z: 0}
-  m_LocalScale: {x: 0.7020993, y: 0.9295881, z: 0.7020993}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 7.4043393, y: 9.803435, z: 7.4043393}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2717129082937397445}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1023827358
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023827354}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3, y: 6, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1023827357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,7 +50,20 @@ MonoBehaviour:
   isGlobal: 0
   blendDistance: 0.1
   weight: 1
-  priority: 0
+  priority: 1
+--- !u!65 &1023827358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023827354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1023827356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,8 +102,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717129082513754009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.06, z: 0}
-  m_LocalScale: {x: 0.14730564, y: 0.14730565, z: 0.14730564}
+  m_LocalPosition: {x: 0, y: 0.815, z: 0}
+  m_LocalScale: {x: 0.12647368, y: 0.12647368, z: 0.12647368}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2717129082937397445}
@@ -169,8 +169,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2717129082861527002}
   - component: {fileID: 2717129082861527005}
-  - component: {fileID: 2717129082861527004}
   - component: {fileID: 2717129082861527003}
+  - component: {fileID: 6937968174222938189}
   m_Layer: 0
   m_Name: Teleport_OUT
   m_TagString: Untagged
@@ -201,20 +201,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717129082861527001}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &2717129082861527004
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2717129082861527001}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &2717129082861527003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 6937968174222938189}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -301,6 +288,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_TeleportAnchorTransform: {fileID: 2717129083903068338}
+--- !u!64 &6937968174222938189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717129082861527001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2717129082937397444
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 2717129082937397444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -108.1, y: 14.89, z: -71.3}
-  m_LocalScale: {x: 1.4243, y: 1.0757453, z: 1.4243}
+  m_LocalScale: {x: 5.446601, y: 4.113709, z: 5.446601}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2717129083677445222}
@@ -353,7 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 2717129082937397446}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -602,7 +604,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2717129082425494818}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2717129082425494822
+--- !u!64 &4559312220298778556
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -616,7 +618,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5690431873986223196, guid: 3fb708e5cc391c74ea57754a6f34231b, type: 3}
---- !u!114 &2717129082425494821
+--- !u!114 &714216172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -629,7 +631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 4559312220298778556}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

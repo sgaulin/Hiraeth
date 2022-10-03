@@ -85,14 +85,14 @@ public class PerspectivesSelection : MonoBehaviour
             familiarLeftHand.SetActive(true);
             familiarRightHand.SetActive(true);
 
-            menuHeadModel.SetActive(false);
-            menuMouthMesh.SetActive(false);
-            menuLeftHandModel.SetActive(false);
-            menuRightHandModel.SetActive(false);
-            familiarHeadModel.SetActive(true);
-            familiarMouthMesh.SetActive(true);
-            familiarLeftHandModel.SetActive(true);
-            familiarRightHandModel.SetActive(true);
+            //menuHeadModel.SetActive(false);
+            //menuMouthMesh.SetActive(false);
+            //menuLeftHandModel.SetActive(false);
+            //menuRightHandModel.SetActive(false);
+            //familiarHeadModel.SetActive(true);
+            //familiarMouthMesh.SetActive(true);
+            //familiarLeftHandModel.SetActive(true);
+            //familiarRightHandModel.SetActive(true);
 }
         else if (familiar == false && isPaused)
         {
@@ -116,14 +116,14 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(true);
             giantRightHand.SetActive(true);
 
-            menuHeadModel.SetActive(false);
-            menuMouthMesh.SetActive(false);
-            menuLeftHandModel.SetActive(false);
-            menuRightHandModel.SetActive(false);
-            giantHeadModel.SetActive(true);
-            giantMouthMesh.SetActive(true);
-            giantLeftHandModel.SetActive(true);
-            giantRightHandModel.SetActive(true);
+            //menuHeadModel.SetActive(false);
+            //menuMouthMesh.SetActive(false);
+            //menuLeftHandModel.SetActive(false);
+            //menuRightHandModel.SetActive(false);
+            //giantHeadModel.SetActive(true);
+            //giantMouthMesh.SetActive(true);
+            //giantLeftHandModel.SetActive(true);
+            //giantRightHandModel.SetActive(true);
         }
         
     }
@@ -147,18 +147,18 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            menuHeadModel.SetActive(true);
-            menuMouthMesh.SetActive(true);
-            menuLeftHandModel.SetActive(true);
-            menuRightHandModel.SetActive(true);
-            familiarHeadModel.SetActive(false);
-            familiarMouthMesh.SetActive(false);
-            familiarLeftHandModel.SetActive(false);
-            familiarRightHandModel.SetActive(false);
-            giantHeadModel.SetActive(false);
-            giantMouthMesh.SetActive(false);
-            giantLeftHandModel.SetActive(false);
-            giantRightHandModel.SetActive(false);
+            //menuHeadModel.SetActive(true);
+            //menuMouthMesh.SetActive(true);
+            //menuLeftHandModel.SetActive(true);
+            //menuRightHandModel.SetActive(true);
+            //familiarHeadModel.SetActive(false);
+            //familiarMouthMesh.SetActive(false);
+            //familiarLeftHandModel.SetActive(false);
+            //familiarRightHandModel.SetActive(false);
+            //giantHeadModel.SetActive(false);
+            //giantMouthMesh.SetActive(false);
+            //giantLeftHandModel.SetActive(false);
+            //giantRightHandModel.SetActive(false);
         }
     }
 

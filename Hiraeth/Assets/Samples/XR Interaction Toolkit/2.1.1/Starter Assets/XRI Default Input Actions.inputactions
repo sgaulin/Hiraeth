@@ -405,6 +405,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Teleport Mode Enable",
+                    "type": "Value",
+                    "id": "39e3fe14-228b-4a2b-9301-e5b83f32f18a",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Teleport Mode Cancel",
                     "type": "Button",
                     "id": "89ce8348-6001-41a3-85b9-f8f2e2dcad7c",
@@ -434,7 +443,7 @@
                 {
                     "name": "Teleport Mode Deactivate",
                     "type": "Value",
-                    "id": "599395cc-a55a-4168-b194-73b9243554cd",
+                    "id": "49829f49-2c52-486c-b97b-d95ecd9a16d8",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -457,7 +466,7 @@
                     "name": "",
                     "id": "8da6ed3a-f621-49fe-8c76-1f6b7d7754d6",
                     "path": "<XRController>{LeftHand}/Primary2DAxis",
-                    "interactions": "Sector(directions=1,pressPoint=0.95)",
+                    "interactions": "Sector(directions=1)",
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Teleport Mode Activate",
@@ -499,9 +508,20 @@
                 },
                 {
                     "name": "",
-                    "id": "da216357-73bc-452c-887b-4167ee98fc1b",
+                    "id": "a4f6de6f-53d1-4b43-8910-b8493ebc4f5b",
                     "path": "<XRController>{LeftHand}/Primary2DAxis",
-                    "interactions": "Sector(directions=1),Press(behavior=1)",
+                    "interactions": "Sector(directions=1,sweepBehavior=2,pressPoint=0.9985)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport Mode Enable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59aa3ff7-9b7c-443e-a3a0-2859b7f14e2d",
+                    "path": "<XRController>{LeftHand}/Primary2DAxis",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Teleport Mode Deactivate",
@@ -866,6 +886,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Teleport Mode Enable",
+                    "type": "Value",
+                    "id": "db4c00ea-592d-452d-83ef-27861981caf8",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Teleport Mode Cancel",
                     "type": "Button",
                     "id": "d587b60c-39a0-4365-8075-477ce484ba0f",
@@ -895,7 +924,7 @@
                 {
                     "name": "Teleport Mode Deactivate",
                     "type": "Value",
-                    "id": "23265d48-6d6a-462c-8cb9-735551a6e1b8",
+                    "id": "8b34c702-3248-467b-b805-c572b8962681",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -918,7 +947,7 @@
                     "name": "",
                     "id": "62690862-4688-4010-975b-b3d9c6062157",
                     "path": "<XRController>{RightHand}/Primary2DAxis",
-                    "interactions": "Sector(directions=1,pressPoint=0.95)",
+                    "interactions": "Sector(directions=1)",
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Teleport Mode Activate",
@@ -960,9 +989,20 @@
                 },
                 {
                     "name": "",
-                    "id": "063189b7-22ac-4cde-a924-fa22ff4c8ace",
+                    "id": "0d9c5433-d7af-4369-bf5c-248b20ee8eff",
                     "path": "<XRController>{RightHand}/Primary2DAxis",
-                    "interactions": "Sector(directions=1),Press(behavior=1)",
+                    "interactions": "Sector(directions=1,sweepBehavior=2,pressPoint=0.9985)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Teleport Mode Enable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e093d944-050d-45ef-964b-d72e640dd19b",
+                    "path": "<XRController>{RightHand}/Primary2DAxis",
+                    "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Teleport Mode Deactivate",

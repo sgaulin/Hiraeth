@@ -12,6 +12,7 @@ Packages:
 -TextMeshPro
 -XR Interaction Toolkit
 -XR Plugin Management
+-ProBuilder
 
 
 ## Credits

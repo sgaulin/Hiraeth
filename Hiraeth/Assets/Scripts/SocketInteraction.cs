@@ -6,8 +6,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SocketInteraction : MonoBehaviour
 {
-    private void onSelectEnter (XRBaseInteractable interactable)
+    XRSocketInteractor socket;
+
+    void Start()
     {
-        interactable.gameObject.SetActive (false); 
+        socket = GetComponent<XRSocketInteractor>();
+    }
+
+    public void Chop()
+    {
+        IXRSelectInteractable obj = socket.interactablesSelected[0];
+        obj.transform.gameObject.SetActive(false);
+        socket.allowSelect = false;
+        socket.allowHover = false;
     }
 }

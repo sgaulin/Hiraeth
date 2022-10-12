@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PerspectivesSelection : MonoBehaviour
 {
     public GameObject xrOrigin;
+    public GameObject MainCamera;
     public bool familiar = true;
     public bool inGame = false;
     public bool isPaused = true;
@@ -34,6 +35,8 @@ public class PerspectivesSelection : MonoBehaviour
     public GameObject leftHandRay;
     public GameObject rightHandRay;
     private float defaultRay;
+
+    public GameObject[] avatars;
     //[Space]
     //[Header("Avatars")]
     //public GameObject menuHeadModel;
@@ -87,8 +90,12 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
-            avatar.SwitchFamilier();
+            avatars = GameObject.FindGameObjectsWithTag("Player");
+            foreach(GameObject avatar in avatars)
+            {
+                AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                manager.SwitchFamilier();
+            }            
 
             //menuHeadModel.SetActive(false);
             //menuMouthMesh.SetActive(false);
@@ -110,7 +117,7 @@ public class PerspectivesSelection : MonoBehaviour
                 familiarSpawnPoint.transform.position = xrOrigin.transform.position;
             }
 
-            xrOrigin.transform.position = giantSpawnPoint.transform.position;
+            xrOrigin.transform.position = (giantSpawnPoint.transform.position - MainCamera.transform.position);
             xrOrigin.transform.rotation = giantSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
 
@@ -127,8 +134,15 @@ public class PerspectivesSelection : MonoBehaviour
             familiarLeftHand.SetActive(false);
             familiarRightHand.SetActive(false);
 
-            AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
-            avatar.SwitchGiant();
+            avatars = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject avatar in avatars)
+            {
+                AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                manager.SwitchGiant();
+            }
+
+            //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
+            //avatar.SwitchGiant();
 
             //menuHeadModel.SetActive(false);
             //menuMouthMesh.SetActive(false);
@@ -165,8 +179,15 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
-            avatar.SwitchMenu();
+            avatars = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject avatar in avatars)
+            {
+                AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                manager.SwitchMenu();
+            }
+
+            //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
+            //avatar.SwitchMenu();
 
             //menuHeadModel.SetActive(true);
             //menuMouthMesh.SetActive(true);

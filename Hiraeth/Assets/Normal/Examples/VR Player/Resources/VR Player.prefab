@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 440391629}
   m_Layer: 0
   m_Name: VR Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -925,6 +925,8 @@ MonoBehaviour:
     component: {fileID: 6532082258859301193}
   - componentID: 2
     component: {fileID: 6531554807044153465}
+  - componentID: 3
+    component: {fileID: 0}
   _childViews:
   - componentID: 1
     component: {fileID: 6531372268988210139}
@@ -1744,7 +1746,7 @@ RotationConstraint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3722193666466735977}
   m_Enabled: 1
-  m_Weight: 1
+  m_Weight: 0.34
   m_RotationAtRest: {x: 0, y: 60, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_AffectRotationX: 1

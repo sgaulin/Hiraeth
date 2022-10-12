@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Normal.Realtime;
 
 public class GiantHead : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.CompareTag("GiantHead"))
-        {
-            gameObject.SetActive(false);
-        }
+        gameObject.transform.position = GameObject.FindGameObjectWithTag("GiantHead").transform.position;
     }
-    private void OnTriggerExit(Collider other)
-    {
-        gameObject.SetActive(true);
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    //if (other.gameObject.CompareTag("GiantHead"))
+    //    //{
+    //        other.gameObject.GetComponent<RealtimeTransform>().RequestOwnership();
+    //        other.gameObject.GetComponent<Renderer>().enabled = false;
+    //    //}
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    other.gameObject.GetComponent<RealtimeTransform>().RequestOwnership();
+    //    other.gameObject.SetActive(true);
+    //}
 }

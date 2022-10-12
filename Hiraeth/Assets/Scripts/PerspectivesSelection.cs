@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using Normal.Realtime;
 
 //Cette classe sert a gerer la selection entre les deux perspectives.
 public class PerspectivesSelection : MonoBehaviour
 {
     public GameObject xrOrigin;
     public GameObject MainCamera;
+    public AvatarManager avatarManager;
     public bool familiar = true;
     public bool inGame = false;
     public bool isPaused = true;
@@ -26,6 +28,8 @@ public class PerspectivesSelection : MonoBehaviour
     public GameObject giantLeftHand;
     public GameObject giantRightHand;
     [Space]
+    public float giantHeight;
+    [Space]
     [Header("Menu")]
     public GameObject menuSpawnPoint;
     [Space]
@@ -36,7 +40,8 @@ public class PerspectivesSelection : MonoBehaviour
     public GameObject rightHandRay;
     private float defaultRay;
 
-    public GameObject[] avatars;
+    
+    
     //[Space]
     //[Header("Avatars")]
     //public GameObject menuHeadModel;
@@ -90,12 +95,12 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            avatars = GameObject.FindGameObjectsWithTag("Player");
-            foreach(GameObject avatar in avatars)
-            {
-                AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                manager.SwitchFamilier();
-            }            
+            //avatars = GameObject.FindGameObjectsWithTag("Player");
+            //foreach(GameObject avatar in avatars)
+            //{
+            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                avatarManager.SwitchFamilier();
+            //}            
 
             //menuHeadModel.SetActive(false);
             //menuMouthMesh.SetActive(false);
@@ -112,14 +117,22 @@ public class PerspectivesSelection : MonoBehaviour
         }
         else if (familiar == false && isPaused)
         {
-            if (isPaused && isStarted && mainMenu.activeSelf == false)
-            {
-                familiarSpawnPoint.transform.position = xrOrigin.transform.position;
-            }
+            //if (isPaused && isStarted && mainMenu.activeSelf == false)
+            //{
+            //    familiarSpawnPoint.transform.position = xrOrigin.transform.position;
+            //}
 
-            xrOrigin.transform.position = (giantSpawnPoint.transform.position - MainCamera.transform.position);
+            xrOrigin.transform.position = giantSpawnPoint.transform.position; 
             xrOrigin.transform.rotation = giantSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
+
+            xrOrigin.transform.position -= new Vector3(MainCamera.transform.position.x, MainCamera.transform.position.y - giantHeight, MainCamera.transform.position.z);
+            float rotationAngleY = xrOrigin.transform.rotation.eulerAngles.y - giantSpawnPoint.transform.rotation.eulerAngles.y;
+            xrOrigin.transform.Rotate(0, -rotationAngleY, 0);
+            //xrOrigin.transform.rotation.eulerAngles.y -= giantSpawnPoint.transform.rotation.y;
+            //xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
+            GameObject.FindGameObjectWithTag("GiantHead").GetComponent<RealtimeView>().RequestOwnership();
+            GameObject.FindGameObjectWithTag("GiantHead").GetComponent<Renderer>().enabled = false;
 
             mainMenu.SetActive(false);
             wristMenu.SetActive(false);
@@ -134,12 +147,12 @@ public class PerspectivesSelection : MonoBehaviour
             familiarLeftHand.SetActive(false);
             familiarRightHand.SetActive(false);
 
-            avatars = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject avatar in avatars)
-            {
-                AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                manager.SwitchGiant();
-            }
+            //avatars = GameObject.FindGameObjectsWithTag("Player");
+            //foreach (GameObject avatar in avatars)
+            //{
+            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                avatarManager.SwitchGiant();
+            //}
 
             //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
             //avatar.SwitchGiant();
@@ -157,7 +170,7 @@ public class PerspectivesSelection : MonoBehaviour
             //giantLeftHandModel.SetActive(true);
             //giantRightHandModel.SetActive(true);
         }
-        
+
     }
 
     public void PMainMenu()
@@ -179,12 +192,12 @@ public class PerspectivesSelection : MonoBehaviour
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            avatars = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject avatar in avatars)
-            {
-                AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                manager.SwitchMenu();
-            }
+            //avatars = GameObject.FindGameObjectsWithTag("Player");
+            //foreach (GameObject avatar in avatars)
+            //{
+            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
+                  avatarManager.SwitchMenu();
+            //}
 
             //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
             //avatar.SwitchMenu();
@@ -241,6 +254,14 @@ public class PerspectivesSelection : MonoBehaviour
 
             leftHandRay.SetActive(true);
             rightHandRay.SetActive(true);
+        }
+    }
+
+    public void SetFamiliarSpawn()
+    {
+        if (familiar)
+        {
+            familiarSpawnPoint.transform.position = xrOrigin.transform.position;
         }
     }
     // Lorqu'il y a une collision, si le tag de l'object avec lequel on est entre en collision est nomme Head

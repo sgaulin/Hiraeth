@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 1502215553}
   - component: {fileID: 6226248826723385716}
   - component: {fileID: 1502215554}
+  - component: {fileID: 984693397}
+  - component: {fileID: 5566196502857972822}
   m_Layer: 0
   m_Name: Socket
   m_TagString: Untagged
@@ -134,6 +136,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1502215554}
+        m_TargetAssemblyTypeName: SocketInteraction, Assembly-CSharp
+        m_MethodName: set_allowHover
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1502215554}
         m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
           Unity.XR.Interaction.Toolkit
         m_MethodName: set_allowSelect
@@ -144,20 +158,19 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1502215554}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRBaseInteractor,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_allowHover
-        m_Mode: 6
+      - m_Target: {fileID: 5566196502857972822}
+        m_TargetAssemblyTypeName: SocketInteraction, Assembly-CSharp
+        m_MethodName: Chop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 4607011493046238423}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -205,6 +218,30 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+--- !u!114 &984693397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502215552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35ad65ad2f75949919ea848145a86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5566196502857972822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502215552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35ad65ad2f75949919ea848145a86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4607011493630848995
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607011493656970329}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -363599832, guid: c424820a8880b8845bda10ec0b41507e, type: 3}
   m_Name: 
@@ -313,7 +350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607011493656970329}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1029778088, guid: c424820a8880b8845bda10ec0b41507e, type: 3}
   m_Name: 
@@ -331,7 +368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607011493656970329}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7989f81abdeed449572368e6b696de, type: 3}
   m_Name: 
@@ -384,7 +421,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 40
+    m_Bits: 552
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -764,6 +801,34 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1719914666532757910}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &101047124
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954338587296554183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4022190473070541326, guid: e1c5764aacb6fb648bd1b81584797463, type: 3}
+--- !u!64 &8139975008502277121
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954338587296554183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4022190473070541326, guid: e1c5764aacb6fb648bd1b81584797463, type: 3}
 --- !u!1001 &4607011493046321791
 PrefabInstance:
   m_ObjectHideFlags: 0

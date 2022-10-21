@@ -4,16 +4,23 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Normal.Realtime;
 
-//Cette classe sert a gerer la selection entre les deux perspectives.
+//Cette classe sert a gerer la selection entre les perspectives.
 public class PerspectivesSelection : MonoBehaviour
 {
+    //Declaration des variables de jeu
     public GameObject xrOrigin;
     public GameObject MainCamera;
+
     public AvatarManager avatarManager;
-    public bool familiar = true;
+
+    public bool isFamiliar = true;
+    public bool isGiant = false;
+
     public bool inGame = false;
     public bool isPaused = true;
     public bool isStarted = false;
+
+    //Declaraiton des variables des avatars
     [Header("Familiar")]
     public float familiarScale = 1;
     public GameObject familiarSpawnPoint;
@@ -23,200 +30,188 @@ public class PerspectivesSelection : MonoBehaviour
     [Space]
     [Header("Giant")]
     public float giantScale = 300;
+    public float giantHeight;
     public GameObject giantSpawnPoint;
     [Space]
     public GameObject giantLeftHand;
     public GameObject giantRightHand;
     [Space]
-    public float giantHeight;
+    public GameObject[] giantIndices;
+
+    [Space]
+    [Header("Cutscene")]
+    public GameObject cutSceneSpawnPoint;
     [Space]
     [Header("Menu")]
     public GameObject menuSpawnPoint;
     [Space]
+    public GameObject leftHandRay;
+    public GameObject rightHandRay;    
+    [Space]
     public GameObject wristMenu;
     public GameObject mainMenu;
-    [Space]
-    public GameObject leftHandRay;
-    public GameObject rightHandRay;
-    private float defaultRay;
-
     
     
-    //[Space]
-    //[Header("Avatars")]
-    //public GameObject menuHeadModel;
-    //public GameObject menuMouthMesh;
-    //public GameObject menuLeftHandModel;
-    //public GameObject menuRightHandModel;
-    //[Space]
-    //public GameObject familiarHeadModel;
-    //public GameObject familiarMouthMesh;
-    //public GameObject familiarLeftHandModel;
-    //public GameObject familiarRightHandModel;
-    //[Space]
-    //public GameObject giantHeadModel;
-    //public GameObject giantMouthMesh;
-    //public GameObject giantLeftHandModel;
-    //public GameObject giantRightHandModel;
-
-    private void Start()
-    {
-        defaultRay = rightHandRay.GetComponent<XRInteractorLineVisual>().lineWidth;
-    }
-
+    //Selection du familier
     public void PFamiliar()
     {
-        familiar = true;
+        isFamiliar = true;
+        isGiant = false;
     }
 
+    //Selection de la geante
     public void PGiant()
     {
-        familiar = false;
+        isFamiliar = false;
+        isGiant = true;
     }
 
+    //
+    //Cette fonction repositionnement du joueur par rapport a la selection
     public void PConnect()
     {
-        if (familiar && isPaused)
+        //Si le joueur a choisi le familier
+        if (isFamiliar && isPaused)
         {
+            //Repositionne le joueur au spawn point du familier mais pas en rotation
             xrOrigin.transform.position = familiarSpawnPoint.transform.position;
             //xrOrigin.transform.rotation = familiarSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(familiarScale, familiarScale, familiarScale);
 
+            //Desactive les menus et annonce que la partie est commencer
             mainMenu.SetActive(false);
             wristMenu.SetActive(false);
             inGame = true;
             isStarted = true;
             isPaused = false;
 
+            //Desactive et reactive les controles menu, familier et geante (+indices)
             leftHandRay.SetActive(false);
             rightHandRay.SetActive(false);
+
             familiarLeftHand.SetActive(true);
             familiarRightHand.SetActive(true);
+
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            //avatars = GameObject.FindGameObjectsWithTag("Player");
-            //foreach(GameObject avatar in avatars)
-            //{
-            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                avatarManager.SwitchFamilier();
-            //}            
+            foreach (GameObject light in giantIndices)
+            {
+                light.SetActive(false);
+            }
 
-            //menuHeadModel.SetActive(false);
-            //menuMouthMesh.SetActive(false);
-            //menuLeftHandModel.SetActive(false);
-            //menuRightHandModel.SetActive(false);
-            //familiarHeadModel.SetActive(true);
-            //familiarMouthMesh.SetActive(true);
-            //familiarLeftHandModel.SetActive(true);
-            //familiarRightHandModel.SetActive(true);
-            //giantHeadModel.SetActive(false);
-            //giantMouthMesh.SetActive(false);
-            //giantLeftHandModel.SetActive(false);
-            //giantRightHandModel.SetActive(false);
+            //Switch l'avatar
+            avatarManager.SwitchFamilier();                  
+                       
         }
-        else if (familiar == false && isPaused)
-        {
-            //if (isPaused && isStarted && mainMenu.activeSelf == false)
-            //{
-            //    familiarSpawnPoint.transform.position = xrOrigin.transform.position;
-            //}
 
+        else if (isFamiliar == false && isPaused)
+        {
+            //Repositionne le joueur au spawn point du geant
             xrOrigin.transform.position = giantSpawnPoint.transform.position; 
             xrOrigin.transform.rotation = giantSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
 
+            //Recentre le joueur par rapport a la position de sa tete
             xrOrigin.transform.position -= new Vector3(MainCamera.transform.position.x, MainCamera.transform.position.y - giantHeight, MainCamera.transform.position.z);
             float rotationAngleY = xrOrigin.transform.rotation.eulerAngles.y - giantSpawnPoint.transform.rotation.eulerAngles.y;
             xrOrigin.transform.Rotate(0, -rotationAngleY, 0);
-            //xrOrigin.transform.rotation.eulerAngles.y -= giantSpawnPoint.transform.rotation.y;
-            //xrOrigin.transform.localScale = new Vector3(giantScale, giantScale, giantScale);
-            GameObject.FindGameObjectWithTag("GiantHead").GetComponent<RealtimeView>().RequestOwnership();
-            GameObject.FindGameObjectWithTag("GiantHead").GetComponent<Renderer>().enabled = false;
 
+            //Desactive les menus et annonce que la partie est commencer
             mainMenu.SetActive(false);
             wristMenu.SetActive(false);
             inGame = true;
             isStarted = true;
             isPaused = false;
 
+            //Desactive et reactive les controles menu, familier et geante (+indices)
             leftHandRay.SetActive(false);
             rightHandRay.SetActive(false);
-            giantLeftHand.SetActive(true);
-            giantRightHand.SetActive(true);
+
             familiarLeftHand.SetActive(false);
             familiarRightHand.SetActive(false);
 
-            //avatars = GameObject.FindGameObjectsWithTag("Player");
-            //foreach (GameObject avatar in avatars)
-            //{
-            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                avatarManager.SwitchGiant();
-            //}
+            giantLeftHand.SetActive(true);
+            giantRightHand.SetActive(true);
 
-            //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
-            //avatar.SwitchGiant();
+            foreach (GameObject light in giantIndices)
+            {
+                light.SetActive(true);
+            }
 
-            //menuHeadModel.SetActive(false);
-            //menuMouthMesh.SetActive(false);
-            //menuLeftHandModel.SetActive(false);
-            //menuRightHandModel.SetActive(false);
-            //familiarHeadModel.SetActive(false);
-            //familiarMouthMesh.SetActive(false);
-            //familiarLeftHandModel.SetActive(false);
-            //familiarRightHandModel.SetActive(false);
-            //giantHeadModel.SetActive(true);
-            //giantMouthMesh.SetActive(true);
-            //giantLeftHandModel.SetActive(true);
-            //giantRightHandModel.SetActive(true);
+            //Switch l'avatar
+            avatarManager.SwitchGiant();
+                        
         }
-
     }
 
+    //Cette fonction repositionne le joueur au menu principale
     public void PMainMenu()
     {
         if (inGame)
         {
+            //Repositionne le joueur au spawn point du menu
             xrOrigin.transform.position = menuSpawnPoint.transform.position;
             xrOrigin.transform.rotation = menuSpawnPoint.transform.rotation;
             xrOrigin.transform.localScale = new Vector3(1, 1, 1);
-            
+
+            //Desactive les menus et annonce que la partie est commencer
             wristMenu.SetActive(false);
             mainMenu.SetActive(true);
             inGame = false;
 
+            //Desactive et reactive les controles menu, familier et geante (+indices)
             leftHandRay.SetActive(true);
             rightHandRay.SetActive(true);
+
             familiarLeftHand.SetActive(false);
-            familiarRightHand.SetActive(false);           
+            familiarRightHand.SetActive(false);  
+            
             giantLeftHand.SetActive(false);
             giantRightHand.SetActive(false);
 
-            //avatars = GameObject.FindGameObjectsWithTag("Player");
-            //foreach (GameObject avatar in avatars)
-            //{
-            //    AvatarManager manager = avatar.GetComponent<AvatarManager>();
-                  avatarManager.SwitchMenu();
-            //}
+            foreach (GameObject light in giantIndices)
+            {
+                light.SetActive(false);
+            }
 
-            //AvatarManager avatar = GameObject.Find("VR Player(Clone)").GetComponent("AvatarManager") as AvatarManager;
-            //avatar.SwitchMenu();
+            //Switch l'avatar
+            avatarManager.SwitchMenu();
 
-            //menuHeadModel.SetActive(true);
-            //menuMouthMesh.SetActive(true);
-            //menuLeftHandModel.SetActive(true);
-            //menuRightHandModel.SetActive(true);
-            //familiarHeadModel.SetActive(false);
-            //familiarMouthMesh.SetActive(false);
-            //familiarLeftHandModel.SetActive(false);
-            //familiarRightHandModel.SetActive(false);
-            //giantHeadModel.SetActive(false);
-            //giantMouthMesh.SetActive(false);
-            //giantLeftHandModel.SetActive(false);
-            //giantRightHandModel.SetActive(false);
         }
     }
 
+    //Cette fonction repositionne le joueur dans la cutscene
+    public void PCutscene()
+    {
+        //Repositionne le joueur au spawn point de la cutscene
+        xrOrigin.transform.position = cutSceneSpawnPoint.transform.position;
+        xrOrigin.transform.rotation = cutSceneSpawnPoint.transform.rotation;
+        xrOrigin.transform.localScale = Vector3.one;
+
+        //Desactive les menus et annonce que la partie est commencer
+        //mainMenu.SetActive(false);
+        //wristMenu.SetActive(false);
+        inGame = true;
+        isStarted = true;
+        isPaused = false;
+
+        //Desactive les controles menu, familier et geante
+        leftHandRay.SetActive(false);
+        rightHandRay.SetActive(false);
+
+        familiarLeftHand.SetActive(false);
+        familiarRightHand.SetActive(false);
+
+        giantLeftHand.SetActive(false);
+        giantRightHand.SetActive(false);
+
+        //Switch l'avatar
+        //avatarManager.SwitchCutscene();
+    }
+
+    //
+    //Active ou desactive le menu au poignet
     public void wristActivate()
     {
         if (wristMenu.activeSelf)
@@ -237,6 +232,7 @@ public class PerspectivesSelection : MonoBehaviour
         }
     }
 
+    //Active ou desactive le menu principale
     public void menuActivate()
     {
         if (mainMenu.activeSelf)
@@ -257,35 +253,13 @@ public class PerspectivesSelection : MonoBehaviour
         }
     }
 
+    //
+    //Si le joueur est un familier, cette fonction repositionne le spawn point ou il est
     public void SetFamiliarSpawn()
     {
-        if (familiar)
+        if (isFamiliar)
         {
             familiarSpawnPoint.transform.position = xrOrigin.transform.position;
         }
-    }
-    // Lorqu'il y a une collision, si le tag de l'object avec lequel on est entre en collision est nomme Head
-    // Si le scale de la racine de l'objet est plus petit que 10, on scale up
-    // Si le scale de la racine de l'objet est plus grand que 10, on scale down
-    // Mushroom*
-
-    //public float threshold = 10;
-
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    if (collision.tag == "MainCamera")
-    //    {
-    //        if (collision.transform.root.localScale.x < threshold)
-    //        {
-    //            collision.transform.parent.parent.localScale = new Vector3(giantScale, giantScale, giantScale);
-    //            Destroy(gameObject);
-    //        }
-
-    //        else if (collision.transform.root.localScale.x > threshold)
-    //        {
-    //            collision.transform.parent.parent.localScale = new Vector3(familiarScale, familiarScale, familiarScale);
-    //            Destroy(gameObject);
-    //        }
-    //    }        
-    //}    
+    }  
 }

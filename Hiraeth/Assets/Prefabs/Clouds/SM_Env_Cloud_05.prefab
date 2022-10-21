@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7148339827780662162}
   - component: {fileID: 6789190681856468274}
   - component: {fileID: 4867915072111246805}
-  - component: {fileID: 6160379805228038209}
   m_Layer: 0
   m_Name: SM_Env_Cloud_05
   m_TagString: Untagged
@@ -236,18 +235,3 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &6160379805228038209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e20e3fe1e4394499eb9af05c2aac1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 10
-  direction: {x: 0.5, y: 0, z: -1}

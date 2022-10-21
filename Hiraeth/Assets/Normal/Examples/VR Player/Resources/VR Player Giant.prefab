@@ -114,7 +114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &983956230061837987
 Transform:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2437293591431222674
 Transform:
   m_ObjectHideFlags: 0
@@ -1189,6 +1189,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_GiantHandR
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 245d9a22d8f6c14439cd05c692a04c8d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245d9a22d8f6c14439cd05c692a04c8d, type: 3}
 --- !u!4 &805977374993572054 stripped
@@ -1342,6 +1347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_GiantHandL
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4c3f16e71decdc4c82fd8bf013068ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c3f16e71decdc4c82fd8bf013068ea, type: 3}

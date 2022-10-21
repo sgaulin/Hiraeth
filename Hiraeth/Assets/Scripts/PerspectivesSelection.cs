@@ -194,11 +194,11 @@ public class PerspectivesSelection : MonoBehaviour
         //wristMenu.SetActive(false);
         inGame = true;
         isStarted = true;
-        isPaused = false;
+        isPaused = true;
 
         //Desactive les controles menu, familier et geante
-        leftHandRay.SetActive(false);
-        rightHandRay.SetActive(false);
+        //leftHandRay.SetActive(false);
+        //rightHandRay.SetActive(false);
 
         familiarLeftHand.SetActive(false);
         familiarRightHand.SetActive(false);

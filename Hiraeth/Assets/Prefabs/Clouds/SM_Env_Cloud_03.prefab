@@ -260,6 +260,10 @@ MonoBehaviour:
   _components:
   - componentID: 1
     component: {fileID: 1031512233}
+  - componentID: 2
+    component: {fileID: 0}
+  - componentID: 3
+    component: {fileID: 0}
   _childViews: []
 --- !u!114 &1031512233
 MonoBehaviour:
@@ -276,7 +280,7 @@ MonoBehaviour:
   _interpolate: 1
   _syncPosition: 1
   _syncRotation: 1
-  _syncScale: 1
+  _syncScale: 0
   _syncVelocity: 1
   _maintainOwnershipWhileSleeping: 1
 --- !u!114 &1031512232

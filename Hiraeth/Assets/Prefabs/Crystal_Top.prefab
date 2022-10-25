@@ -224,8 +224,8 @@ Transform:
   m_GameObject: {fileID: 4808104504141716874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -109.053, y: 15.871, z: -96.54}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4808104504165692977}
   - {fileID: 4808104502876926112}
@@ -274,7 +274,7 @@ MonoBehaviour:
   _interpolate: 1
   _syncPosition: 1
   _syncRotation: 1
-  _syncScale: 1
+  _syncScale: 0
   _syncVelocity: 1
   _maintainOwnershipWhileSleeping: 0
 --- !u!114 &3369614656598930465

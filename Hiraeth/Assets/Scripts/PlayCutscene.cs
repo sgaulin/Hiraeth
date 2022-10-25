@@ -17,4 +17,9 @@ public class PlayCutscene : MonoBehaviour
     {
         GetComponent<AudioSource>().Play();
     }
+
+    public void StopVoice()
+    {
+        GetComponent<AudioSource>().Stop();
+    }
 }

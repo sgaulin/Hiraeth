@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Familiar
+  - Giant
+  - Rocks
   layers:
   - Default
   - TransparentFX

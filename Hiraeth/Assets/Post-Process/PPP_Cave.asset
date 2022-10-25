@@ -1332,7 +1332,7 @@ MonoBehaviour:
     value: {x: 50, y: 95}
   minLuminance:
     overrideState: 1
-    value: 4.97
+    value: 1.4
   maxLuminance:
     overrideState: 1
     value: 9

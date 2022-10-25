@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: -1390552213202276026}
   m_Layer: 0
   m_Name: SM_Env_Rock_Rectangle_06
-  m_TagString: Untagged
+  m_TagString: Rocks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2184797968382208863}
   m_LocalRotation: {x: -0.52523386, y: 0.09452536, z: 0.14142956, w: 0.83378184}
-  m_LocalPosition: {x: 0.0221, y: -0.0384, z: 0.0531}
+  m_LocalPosition: {x: 0.025, y: -0.082, z: 0.041}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -443,7 +443,6 @@ GameObject:
   - component: {fileID: 6532865008580355741}
   - component: {fileID: 6532082258859301193}
   - component: {fileID: 6531554807044153465}
-  - component: {fileID: 440391629}
   m_Layer: 0
   m_Name: VR Player Giant
   m_TagString: Player
@@ -539,21 +538,6 @@ MonoBehaviour:
   _syncScale: 1
   _syncVelocity: 1
   _maintainOwnershipWhileSleeping: 0
---- !u!114 &440391629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571980589479075489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a61953e4be7974fa0f5389a6ec6db3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FamilierAvatar: {fileID: 0}
-  GiantAvatar: {fileID: 0}
-  MenuAvatar: {fileID: 0}
 --- !u!1 &6572073239253810019
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,12 +931,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -985,7 +969,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0.3
       inSlope: 0
       outSlope: 0
       tangentMode: 0

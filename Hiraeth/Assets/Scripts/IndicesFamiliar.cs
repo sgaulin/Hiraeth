@@ -16,10 +16,10 @@ public class IndicesFamiliar : MonoBehaviour
             }
         }
 
-        else if (other.tag == "Giant")
-        {
-            gameObject.SetActive(false);
-        }
+        //else if (other.tag == "Giant")
+        //{
+        //    gameObject.SetActive(false);
+        //}
     }
 
     //Lorsque qu'un object sors de la collision avec le trigger

@@ -7,6 +7,7 @@ TagManager:
   - Familiar
   - Giant
   - Rocks
+  - Water
   layers:
   - Default
   - TransparentFX

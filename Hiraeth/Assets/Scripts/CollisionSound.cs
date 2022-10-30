@@ -4,16 +4,37 @@ using UnityEngine;
 
 public class CollisionSound : MonoBehaviour
 {
-    private bool canPlay = true;
-    public float delay = 0.3f;
+    public AudioSource hitSound;
+    public float velocityThreshold = 1;
+
+    public GameObject sploushFX;
+    public float destroyDelay = 5.0f;
+	
+	//private float randomValue = 0;
+
+    private void Start()
+    {
+        hitSound = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (canPlay)
+        if(collision.relativeVelocity.magnitude >= velocityThreshold)
         {
-            canPlay = false;
-            GetComponent<AudioSource>().Play();
+            if (!hitSound.isPlaying)
+            {
+				//random;
+                hitSound.Play();
+            }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (this.tag == "Water")
+        {
+            GameObject sploush = (GameObject)Instantiate(sploushFX, other.transform.position, Quaternion.identity);
+            Destroy(sploush, destroyDelay);
+        }
     }
 }

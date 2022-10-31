@@ -8,6 +8,8 @@ TagManager:
   - Giant
   - Rocks
   - Water
+  - Crystal
+  - Tree
   layers:
   - Default
   - TransparentFX

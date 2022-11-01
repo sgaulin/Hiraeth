@@ -197,8 +197,8 @@ public class PerspectivesSelection : MonoBehaviour
         isPaused = true;
 
         //Desactive les controles menu, familier et geante
-        //leftHandRay.SetActive(false);
-        //rightHandRay.SetActive(false);
+        leftHandRay.SetActive(true);
+        rightHandRay.SetActive(true);
 
         familiarLeftHand.SetActive(false);
         familiarRightHand.SetActive(false);
@@ -207,7 +207,7 @@ public class PerspectivesSelection : MonoBehaviour
         giantRightHand.SetActive(false);
 
         //Switch l'avatar
-        //avatarManager.SwitchCutscene();
+        avatarManager.SwitchMenu();
     }
 
     //

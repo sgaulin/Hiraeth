@@ -208,6 +208,8 @@ struct Dictionary_2_tABE19B9C5C52F1DE14F0D3287B2696E7D7419180;
 struct Dictionary_2_t9422155976AA5669B953F2FA792954DC4DFD250B;
 // System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.EventSystems.PointerEventData>
 struct Dictionary_2_t489B023479196B8FC9709A9F834FC38729BD9493;
+// System.Collections.Generic.Dictionary`2<System.Int32,Normal.Realtime.RealtimeAvatar>
+struct Dictionary_2_tE3492F6EE59E5932585E7836E837F16A02F951E9;
 // System.Collections.Generic.Dictionary`2<System.Object,System.Object>
 struct Dictionary_2_t14FE4A752A83D53771C584E4C8D14E01F2AFD7BA;
 // System.Collections.Generic.Dictionary`2<System.String,UnityEngine.UI.ToggleGroup>
@@ -496,6 +498,8 @@ struct MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71;
 struct MoviePlayerSample_t40C50C37E66041A8B70B9E410031CC7CDB0EDA42;
 // MoviePlayerSampleControls
 struct MoviePlayerSampleControls_t67011B7F86B7CCF017D0FEAC05222F9AA983FF95;
+// MyAvatarManager
+struct MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F;
 // UnityEngine.AI.NavMeshPath
 struct NavMeshPath_tC77ABF4A25FC0F0A94E8A70E304E114FE690A3A7;
 // System.NotSupportedException
@@ -534,6 +538,12 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C;
 struct PersistentCallGroup_tB826EDF15DC80F71BCBCD8E410FD959A04C33F25;
 // UnityEngine.EventSystems.PointerEventData
 struct PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB;
+// Normal.Realtime.Realtime
+struct Realtime_tA206CC03FC9B54021286A4D192DABE8EE6A11E58;
+// Normal.Realtime.RealtimeAvatar
+struct RealtimeAvatar_t6101680A144A2C48DAE1CA95719DF1CB83DCCBA4;
+// Normal.Realtime.RealtimeAvatarManager
+struct RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6;
 // UnityEngine.UI.RectMask2D
 struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
 // UnityEngine.RectTransform
@@ -722,6 +732,10 @@ struct InstantiateMrcCameraDelegate_t26D39C3003CADD2CBA4E7C5EB75333089B2F03C8;
 struct ExternalSurfaceObjectCreated_tBAE280613D86A040CC365995D817E30254FDEF1A;
 // UnityEngine.EventSystems.PointerInputModule/MouseState
 struct MouseState_tCCE70861DE1EEECF949AFE8E2A922541D4E08A09;
+// Normal.Realtime.RealtimeAvatar/LocalPlayer
+struct LocalPlayer_t27EA8367D2D0D252D76937C574735375B3D193A7;
+// Normal.Realtime.RealtimeAvatarManager/AvatarCreatedDestroyed
+struct AvatarCreatedDestroyed_tE1AB48050568C982421529F109685EC61D9870B3;
 // UnityEngine.RectTransform/ReapplyDrivenProperties
 struct ReapplyDrivenProperties_t3482EA130A01FF7EE2EEFE37F66A5215D08CFE24;
 // UnityEngine.UI.Slider/SliderEvent
@@ -932,6 +946,7 @@ IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisLocomotionTelepor
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisMeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE_m0EDA0079FA3617687C4A28623B79A37D618D9CFB_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisOVROverlay_t236C8597A48845938E1DE1D591224817058AC43D_m13B68445C379FC7A3B1CDF097B3369C0F0C78A92_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisOVRRaycaster_t7F1DE085FFCC5957E5F9D6DDA71FA9670EFDE182_mDC668F954A830DF442E921DBDFB635E75E1C7B26_RuntimeMethod_var;
+IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisRealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6_mF0613582EAD1908F0C7C99176FD9D0253BEA08A3_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisRenderer_t320575F223BCB177A982E5DDB5DB19FAA89E7FBF_mC91ACC92AD57CA6CA00991DAF1DB3830BCE07AF8_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisRigidbody_t268697F5A994213ED97393309870968BC1C7393C_m4B5CAD64B52D153BEA96432633CA9A45FA523DD8_RuntimeMethod_var;
@@ -5249,6 +5264,19 @@ struct MoviePlayerSampleControls_t67011B7F86B7CCF017D0FEAC05222F9AA983FF95  : pu
 	int32_t ____state_24;
 };
 
+// MyAvatarManager
+struct MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// Normal.Realtime.RealtimeAvatarManager MyAvatarManager::_manager
+	RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* ____manager_4;
+	// UnityEngine.GameObject MyAvatarManager::FamilierAvatar
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___FamilierAvatar_5;
+	// UnityEngine.GameObject MyAvatarManager::GiantAvatar
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___GiantAvatar_6;
+	// UnityEngine.GameObject MyAvatarManager::MenuAvatar
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___MenuAvatar_7;
+};
+
 // OVRCameraRig
 struct OVRCameraRig_t7FC2BB0D30DED2B7F0C8914AF2B66E9F4CF891A9  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -5698,6 +5726,25 @@ struct OVRScreenFade_tCFBC0A69E92FF77827F6CF5095FBE7F4A338B774_StaticFields
 {
 	// OVRScreenFade OVRScreenFade::<instance>k__BackingField
 	OVRScreenFade_tCFBC0A69E92FF77827F6CF5095FBE7F4A338B774* ___U3CinstanceU3Ek__BackingField_4;
+};
+
+// Normal.Realtime.RealtimeAvatarManager
+struct RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
+{
+	// UnityEngine.GameObject Normal.Realtime.RealtimeAvatarManager::_localAvatarPrefab
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____localAvatarPrefab_4;
+	// Normal.Realtime.RealtimeAvatar/LocalPlayer Normal.Realtime.RealtimeAvatarManager::_localPlayer
+	LocalPlayer_t27EA8367D2D0D252D76937C574735375B3D193A7* ____localPlayer_5;
+	// Normal.Realtime.RealtimeAvatar Normal.Realtime.RealtimeAvatarManager::<localAvatar>k__BackingField
+	RealtimeAvatar_t6101680A144A2C48DAE1CA95719DF1CB83DCCBA4* ___U3ClocalAvatarU3Ek__BackingField_6;
+	// System.Collections.Generic.Dictionary`2<System.Int32,Normal.Realtime.RealtimeAvatar> Normal.Realtime.RealtimeAvatarManager::<avatars>k__BackingField
+	Dictionary_2_tE3492F6EE59E5932585E7836E837F16A02F951E9* ___U3CavatarsU3Ek__BackingField_7;
+	// Normal.Realtime.RealtimeAvatarManager/AvatarCreatedDestroyed Normal.Realtime.RealtimeAvatarManager::avatarCreated
+	AvatarCreatedDestroyed_tE1AB48050568C982421529F109685EC61D9870B3* ___avatarCreated_8;
+	// Normal.Realtime.RealtimeAvatarManager/AvatarCreatedDestroyed Normal.Realtime.RealtimeAvatarManager::avatarDestroyed
+	AvatarCreatedDestroyed_tE1AB48050568C982421529F109685EC61D9870B3* ___avatarDestroyed_9;
+	// Normal.Realtime.Realtime Normal.Realtime.RealtimeAvatarManager::_realtime
+	Realtime_tA206CC03FC9B54021286A4D192DABE8EE6A11E58* ____realtime_10;
 };
 
 // SampleUI
@@ -7706,6 +7753,8 @@ struct Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C  : public RuntimeAr
 };
 
 
+// T UnityEngine.Component::GetComponent<System.Object>()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // T UnityEngine.Object::FindObjectOfType<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Object_FindObjectOfType_TisRuntimeObject_m9990A7304DF02BA1ED160587D1C2F6DAE89BB343_gshared (const RuntimeMethod* method) ;
 // T System.Collections.Generic.List`1<System.Object>::get_Item(System.Int32)
@@ -7720,8 +7769,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Object_Instantiate_TisRuntimeO
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool List_1_Contains_m4C9139C2A6B23E9343D3F87807B32C6E2CFE660D_gshared (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<System.Object>::Add(T)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void List_1_Add_mEBCF994CC3814631017F46A387B1A192ED6C85C7_gshared_inline (List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D* __this, RuntimeObject* ___item0, const RuntimeMethod* method) ;
-// T UnityEngine.Component::GetComponent<System.Object>()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponentInChildren<System.Object>()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* Component_GetComponentInChildren_TisRuntimeObject_mE483A27E876DE8E4E6901D6814837F81D7C42F65_gshared (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Events.UnityAction`1<System.Single>::.ctor(System.Object,System.IntPtr)
@@ -7797,6 +7844,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3U5BU5D_tFF1859CCE176131B909E2044F76443
 // T[] System.Collections.Generic.List`1<System.Int32>::ToArray()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* List_1_ToArray_m65479FB75A5FE539EA1A0D6681172717D23CEAAA_gshared (List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* __this, const RuntimeMethod* method) ;
 
+// T UnityEngine.Component::GetComponent<Normal.Realtime.RealtimeAvatarManager>()
+inline RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* Component_GetComponent_TisRealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6_mF0613582EAD1908F0C7C99176FD9D0253BEA08A3 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
+{
+	return ((  RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
+}
+// System.Void Normal.Realtime.RealtimeAvatarManager::set_localAvatarPrefab(UnityEngine.GameObject)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RealtimeAvatarManager_set_localAvatarPrefab_m483CB1086898486CE3E5A5FEEF5E33F32C6B6761 (RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___value0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.MonoBehaviour::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // UnityEngine.Transform UnityEngine.Component::get_transform()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method) ;
 // UnityEngine.Vector3 UnityEngine.Transform::get_position()
@@ -8038,8 +8094,6 @@ inline void Dictionary_2__ctor_mBF107BD4D0BC301B5C8329D9EB6951997345CD48 (Dictio
 {
 	((  void (*) (Dictionary_2_t4D32AB7B38D14EB24A56141DC52CF5643FDF9834*, const RuntimeMethod*))Dictionary_2__ctor_m5B32FBC624618211EB461D59CFBB10E987FD1329_gshared)(__this, method);
 }
-// System.Void UnityEngine.MonoBehaviour::.ctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 // System.Void System.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.Void DebugUIBuilder/OnClick::Invoke()
@@ -9003,6 +9057,80 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m48B57EC27CADC3463CA98A33373
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void MyAvatarManager::Awake()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyAvatarManager_Awake_m9A66DD525CBFA6C8A5C765D92601D1BCD38981C7 (MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisRealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6_mF0613582EAD1908F0C7C99176FD9D0253BEA08A3_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// _manager = GetComponent<RealtimeAvatarManager>();
+		RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* L_0;
+		L_0 = Component_GetComponent_TisRealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6_mF0613582EAD1908F0C7C99176FD9D0253BEA08A3(__this, Component_GetComponent_TisRealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6_mF0613582EAD1908F0C7C99176FD9D0253BEA08A3_RuntimeMethod_var);
+		__this->____manager_4 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____manager_4), (void*)L_0);
+		// }
+		return;
+	}
+}
+// System.Void MyAvatarManager::SwitchFamilier()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyAvatarManager_SwitchFamilier_m0A6E7DD263E10DCEDF81DD76C1F864C4DFCE0294 (MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F* __this, const RuntimeMethod* method) 
+{
+	{
+		// _manager.localAvatarPrefab = FamilierAvatar;
+		RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* L_0 = __this->____manager_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___FamilierAvatar_5;
+		NullCheck(L_0);
+		RealtimeAvatarManager_set_localAvatarPrefab_m483CB1086898486CE3E5A5FEEF5E33F32C6B6761(L_0, L_1, NULL);
+		// }
+		return;
+	}
+}
+// System.Void MyAvatarManager::SwitchGiant()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyAvatarManager_SwitchGiant_m30F24A48C3B84D8AC6A9F41E45F61742CC35152E (MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F* __this, const RuntimeMethod* method) 
+{
+	{
+		// _manager.localAvatarPrefab = GiantAvatar;
+		RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* L_0 = __this->____manager_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___GiantAvatar_6;
+		NullCheck(L_0);
+		RealtimeAvatarManager_set_localAvatarPrefab_m483CB1086898486CE3E5A5FEEF5E33F32C6B6761(L_0, L_1, NULL);
+		// }
+		return;
+	}
+}
+// System.Void MyAvatarManager::SwitchMenu()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyAvatarManager_SwitchMenu_m6007E1782F1ED3B20BCE631EA5DC56DF59A8CD2C (MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F* __this, const RuntimeMethod* method) 
+{
+	{
+		// _manager.localAvatarPrefab = MenuAvatar;
+		RealtimeAvatarManager_tBDBBFE208265B7236932C029D5701F52D35DE6C6* L_0 = __this->____manager_4;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_1 = __this->___MenuAvatar_7;
+		NullCheck(L_0);
+		RealtimeAvatarManager_set_localAvatarPrefab_m483CB1086898486CE3E5A5FEEF5E33F32C6B6761(L_0, L_1, NULL);
+		// }
+		return;
+	}
+}
+// System.Void MyAvatarManager::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MyAvatarManager__ctor_mCC313C5F0213FB6EE834CE07B4AA83379413612C (MyAvatarManager_t67DE75A74F51ECB4D410A2A3B9FD6F3216E2CD7F* __this, const RuntimeMethod* method) 
+{
+	{
+		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
+		return;
+	}
+}
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif

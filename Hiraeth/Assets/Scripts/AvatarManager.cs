@@ -75,10 +75,9 @@ public class AvatarManager : MonoBehaviour
     }
     public void SwitchMenu()
     {
-        if (_manager.localAvatarPrefab != MenuAvatar)
-        {
+       
             _manager.localAvatarPrefab = MenuAvatar;
-        }
+        
 
         //if (GetComponent<RealtimeView>().isOwnedLocallySelf)
         //{

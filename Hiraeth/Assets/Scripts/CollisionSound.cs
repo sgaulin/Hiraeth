@@ -21,13 +21,15 @@ public class CollisionSound : MonoBehaviour
 
     private void Start()
     {
-        hitSound = GetComponent<AudioSource>();        
+        hitSound = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collision" + collision.gameObject.name);
-        if(collision.relativeVelocity.magnitude >= velocityThreshold)
+        
+        Debug.Log("Collision sound with " + this.name + " and " + collision.gameObject.name);
+
+        if (collision.relativeVelocity.magnitude >= velocityThreshold)
         {
             if (Time.time>=nextSoundTime)
             {
@@ -45,7 +47,7 @@ public class CollisionSound : MonoBehaviour
     {
         if (Time.time >= nextSoundTime)
         {
-            if (this.tag == "Water" && (other.tag == "Rocks" || other.tag == "Tree" || other.tag == "Crystal" || other.tag == "Giant"))
+            if (this.tag == "Water" && (other.tag == "Rocks" || other.tag == "Tree" || other.tag == "Crystal" ))
             {
                 Debug.Log("splash" + other.gameObject.name);                
                 nextSoundTime = Time.time + (sploushFX.GetComponentInChildren<AudioSource>().clip.length * repeatPercent);

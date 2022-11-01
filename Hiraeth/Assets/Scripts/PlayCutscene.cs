@@ -5,12 +5,16 @@ using UnityEngine;
 public class PlayCutscene : MonoBehaviour
 {
     //Cette fonction demarre l'animation place dans chacun des enfants
-    public void PlayAnimation()
+    public void PlayAnimations()
     {
         foreach (Animation animation in GetComponentsInChildren<Animation>())
         {
             animation.Play();
         }
+    }
+    public void PlayAnimation()
+    {       
+        GetComponent<Animation>().Play();        
     }
 
     public void PlayMusic()

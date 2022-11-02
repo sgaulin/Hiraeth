@@ -8,11 +8,15 @@ public class GrabRequest : MonoBehaviour
 {
     private RealtimeTransform realtimetransform;
     private XRGrabInteractable xrgrabinteractable;
+
+    private GameObject fx;
+
     // Start is called before the first frame update
     void Start()
     {
         realtimetransform = GetComponent<RealtimeTransform>();
-        xrgrabinteractable = GetComponent<XRGrabInteractable>();    
+        xrgrabinteractable = GetComponent<XRGrabInteractable>();
+        fx = this.transform.Find("--FX--").gameObject;
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class GrabRequest : MonoBehaviour
         if(xrgrabinteractable.isSelected)
         {
             realtimetransform.RequestOwnership();
+            fx.SetActive(true);
         }
     }
 }

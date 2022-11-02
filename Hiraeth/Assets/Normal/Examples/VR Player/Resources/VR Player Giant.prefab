@@ -206,14 +206,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2184797968382208863}
-  m_LocalRotation: {x: -0.63242406, y: 0.07468076, z: 0.15284036, w: 0.7557132}
-  m_LocalPosition: {x: 0.0238, y: -0.1974, z: -0.014}
+  m_LocalRotation: {x: -0.19080901, y: 0, z: -0, w: 0.9816272}
+  m_LocalPosition: {x: 0.000000009536743, y: 0.00015713215, z: -0.00005149126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6575154583966150923}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -78.151, y: -23.065, z: 41.681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9119064394814394397
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2184797968382208863}
-  m_Mesh: {fileID: 6168961973097747582, guid: 37f57a8d20318ba49b2a39dc42db3ae6, type: 3}
+  m_Mesh: {fileID: 4300002, guid: cd4d92dbe54dcbf41bd37179e8b8b19f, type: 3}
 --- !u!23 &8291724511386889747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -799,15 +799,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6572424617606387449}
-  m_LocalRotation: {x: 0.52523386, y: -0.09452534, z: -0.14142957, w: 0.83378184}
-  m_LocalPosition: {x: 0.0007342966, y: 0.013199996, z: 0.019861428}
+  m_LocalRotation: {x: 0.19080894, y: 0, z: 0, w: 0.9816273}
+  m_LocalPosition: {x: 0.0007342966, y: -0.0659, z: -0.0181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2044616339871244172}
   m_Father: {fileID: 6566292493845283123}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22, y: 0, z: 0}
 --- !u!1 &6572913871368463773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1261,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 82e43ca3c60479049bf27c5eafbdbda5, type: 2}
+    - target: {fileID: 3370594, guid: 53fa14a335aa29546b978f4d9371d585, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7709599871059874457, guid: eab506d5a57ac1940b1b29cf27f11eba,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53fa14a335aa29546b978f4d9371d585, type: 3}
 --- !u!4 &5697725778636996398 stripped

@@ -10,6 +10,8 @@ TagManager:
   - Water
   - Crystal
   - Tree
+  - GiantHead
+  - Hand
   layers:
   - Default
   - TransparentFX

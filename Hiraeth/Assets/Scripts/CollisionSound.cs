@@ -33,7 +33,7 @@ public class CollisionSound : MonoBehaviour
         {
             if (Time.time>=nextSoundTime)
             {
-                if(this.tag != collision.collider.tag && collision.collider.tag != "Water")
+                if(this.tag != collision.collider.tag && collision.collider.tag != "Water" && collision.collider.tag != "Hand" )
                 {
                     hitSound.pitch = Random.Range(minPitch, maxPitch);
                     hitSound.Play();

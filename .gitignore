@@ -5,7 +5,7 @@
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-#[Bb]uild/
+[Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
@@ -68,3 +68,5 @@ Hiraeth/UserSettings/Layouts/default-2021.dwlt
 Hiraeth/UserSettings/EditorUserSettings.asset
 Hiraeth/UserSettings/Layouts/default-2021.dwlt
 Hiraeth/UserSettings/EditorUserSettings.asset
+Build/Gaulin_Nellis_Ouellet_Portfolio2_TP3.zip
+Build/Gaulin_Nellis_Ouellet_Portfolio2_TP3.zip

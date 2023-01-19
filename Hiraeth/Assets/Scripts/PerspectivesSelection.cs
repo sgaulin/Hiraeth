@@ -49,6 +49,7 @@ public class PerspectivesSelection : MonoBehaviour
     public GameObject rightHandRay;    
     [Space]
     public GameObject wristMenu;
+    public GameObject devMenu;
     public GameObject mainMenu;
     
     
@@ -210,7 +211,6 @@ public class PerspectivesSelection : MonoBehaviour
         avatarManager.SwitchMenu();
     }
 
-    //
     //Active ou desactive le menu au poignet
     public void wristActivate()
     {
@@ -229,6 +229,20 @@ public class PerspectivesSelection : MonoBehaviour
 
             leftHandRay.SetActive(true);
             rightHandRay.SetActive(true);
+        }
+    }
+
+    //Active ou desactive le menu au poignet
+    public void devActivate()
+    {
+        if (devMenu.activeSelf)
+        {
+            devMenu.SetActive(false);            
+        }
+        else if (!devMenu.activeSelf)
+        {
+            devMenu.SetActive(true);
+            
         }
     }
 

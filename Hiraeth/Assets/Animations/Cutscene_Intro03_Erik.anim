@@ -1263,7 +1263,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 53.05
+  - time: 51.85
     functionName: Press
     data: 
     objectReferenceParameter: {fileID: 0}
